@@ -12,17 +12,17 @@ export class ErrorInterceptor implements HttpInterceptor {
     return next.handle(req).pipe(
       catchError(error => {
         if (error instanceof HttpErrorResponse) {
+          //Unauthorized
           if (error.status === 401) {
             return throwError(error.statusText);
           }
-          if (error.status === 400) {
-            return throwError(error.error);
-          }
+          //Application-Error: Internal Server Error
           const applicationError = error.headers.get("Application-Error");
           if (applicationError) {
             console.log(applicationError)
             return throwError(applicationError);
           }
+          //Model state error
           const serverError = error.error.errors;
           let modalStateErrors = '';
           if(serverError && typeof serverError === "object"){
