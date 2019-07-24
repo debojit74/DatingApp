@@ -19,11 +19,10 @@ export class ErrorInterceptor implements HttpInterceptor {
           //Application-Error: Internal Server Error
           const applicationError = error.headers.get("Application-Error");
           if (applicationError) {
-            console.log(applicationError)
             return throwError(applicationError);
           }
-          //Model state error
-          const serverError = error.error.errors;
+          //Model state error and Bad request
+          const serverError = error.error.errors || error.error;
           let modalStateErrors = '';
           if(serverError && typeof serverError === "object"){
             for (const key in serverError) {
