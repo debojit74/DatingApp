@@ -1,5 +1,5 @@
-import { AlertifyService } from './../services/alertify.service';
-import { AuthService } from './../services/auth.service';
+import { AlertifyService } from '../_services/alertify.service';
+import { AuthService } from '../_services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { Alert } from 'selenium-webdriver';
 import { Router } from '@angular/router';
