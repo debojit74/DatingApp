@@ -1,3 +1,4 @@
+import { SubjectService } from './../_services/subject.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,17 +10,21 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   registerMode = false;
   values: any;
+  loader: boolean;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private subjectService: SubjectService) { }
 
   ngOnInit() {
+    this.subjectService.isLoading.subscribe((data: boolean) => {
+      this.loader = data;
+    });
   }
 
-  registerToggle(){
+  registerToggle() {
     this.registerMode = !this.registerMode;
   }
 
-  cancelRegisterMode(registerMode: boolean){
+  cancelRegisterMode(registerMode: boolean) {
     this.registerMode = registerMode;
   }
 }

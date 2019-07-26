@@ -1,8 +1,9 @@
+import { SubjectService } from './../_services/subject.service';
 import { AlertifyService } from '../_services/alertify.service';
 import { AuthService } from '../_services/auth.service';
-import { Component, OnInit } from '@angular/core';
-import { Alert } from 'selenium-webdriver';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-nav',
@@ -13,6 +14,7 @@ export class NavComponent implements OnInit {
   model: any = {};
 
   constructor(public authService: AuthService,
+    private subjectService: SubjectService,
     private alertify: AlertifyService,
     private router: Router) { }
 
@@ -20,9 +22,12 @@ export class NavComponent implements OnInit {
   }
 
   login() {
+    this.subjectService.loadingStatus(true);
     this.authService.login(this.model).subscribe(next => {
       this.alertify.success("Logged in successfully");
+      this.subjectService.loadingStatus(false);
     }, error => {
+      this.subjectService.loadingStatus(false);
       this.alertify.error(error);
     }, () => {
       this.router.navigate(['/members']);

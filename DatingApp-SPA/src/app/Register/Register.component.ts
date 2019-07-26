@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { OnInit, EventEmitter, Output, Component } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
 import { AlertifyService } from '../_services/alertify.service';
 
@@ -10,6 +10,8 @@ import { AlertifyService } from '../_services/alertify.service';
 export class RegisterComponent implements OnInit {
   @Output() cancelRegister = new EventEmitter();
   model: any = {};
+  isPasswordVisible: boolean = false;
+  inputType = "password";
 
   constructor(private authService: AuthService, private alertify: AlertifyService) { }
 
@@ -26,5 +28,10 @@ export class RegisterComponent implements OnInit {
 
   cancel(){
     this.cancelRegister.emit(false);
+  }
+
+  togglePassword(){
+    this.isPasswordVisible = !this.isPasswordVisible;
+    this.inputType = this.isPasswordVisible == false ? this.inputType = "password" : this.inputType = "text";
   }
 }
