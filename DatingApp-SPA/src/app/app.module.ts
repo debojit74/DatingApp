@@ -1,5 +1,3 @@
-import { MemberDetailComponent } from './members/member-detail/member-detail.component';
-import { MemberCardComponent } from './members/member-card/member-card.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
@@ -19,6 +17,9 @@ import { ListsComponent } from './lists/lists.component';
 import { MessagesComponent } from './messages/messages.component';
 import { appRoutes } from './routes';
 import { LoadingSpinnerComponent } from './_shared/loading-spinner/loading-spinner.component';
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
+import { MemberDetailComponent } from './members/member-detail/member-detail.component';
+import { MemberCardComponent } from './members/member-card/member-card.component';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -35,7 +36,8 @@ export function tokenGetter() {
       MessagesComponent,
       MemberCardComponent,
       MemberDetailComponent,
-      LoadingSpinnerComponent
+      LoadingSpinnerComponent,
+      MemberEditComponent
    ],
    imports: [
       BrowserModule,
