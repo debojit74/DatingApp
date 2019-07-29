@@ -16,19 +16,19 @@ export class AlertifyService {
     });
   }
 
-  success(message: string){
+  success(message: string) {
     alertify.success(message, 3);
   }
 
-  error(message: string){
+  error(message: string) {
     alertify.error(message, 3);
   }
 
-  warning(message: string){
+  warning(message: string) {
     alertify.warning(message, 3);
   }
 
-  message(message: string){
+  message(message: string) {
     alertify.message(message, 3);
   }
 
