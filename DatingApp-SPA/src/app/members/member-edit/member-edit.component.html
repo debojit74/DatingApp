@@ -1,7 +1,7 @@
 <div>
   <div class="row">
     <div class="col-sm-4">
-      <h2 class="ml-3">Your Profile</h2>
+      <h4>Your Profile</h4>
     </div>
     <div class="col-sm-8">
       <div *ngIf="editForm.dirty" class="alert alert-info">
@@ -57,7 +57,7 @@
             </form>
           </tab>
           <tab heading="Edit Photos">
-            <app-photo-editor [photos]="user.photos"></app-photo-editor>
+            <app-photo-editor [photos]="user.photos" (getMemberPhotoChange)="updateMainPhoto($event)"></app-photo-editor>
           </tab>
         </tabset>
       </div>
