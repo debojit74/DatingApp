@@ -13,7 +13,7 @@ export class AlertifyService {
       if (e) {
         okCallback();
       } else { }
-    });
+    }).setHeader("Confirmation Required");
   }
 
   success(message: string) {
