@@ -1,19 +1,17 @@
-<form #registerForm="ngForm" (ngSubmit)="register()">
+<form [formGroup]="registerForm" (ngSubmit)="register()">
   <h2 class="text-center text-primary">Sign Up</h2>
   <hr>
 
   <div class="form-group">
-    <input type="text" class="form-control" required name="username" [(ngModel)]="model.username"
-      placeholder="Username">
+    <input type="text" class="form-control" formControlName="username" placeholder="Username">
   </div>
 
-  <div class="input-group">
-    <input [type]="inputType" class="form-control" required name="password" [(ngModel)]="model.password"
-      placeholder="Password">
-    <span class="input-group-btn" (click)="togglePassword()">
-      <button *ngIf="isPasswordVisible" id="passwordButtonShow" class="btn btn-secondary" type="button"><i class="fa fa-eye"></i></button>
-      <button *ngIf="!isPasswordVisible" id="passwordButtonHide" class="btn btn-secondary" type="button"><i class="fa fa-eye-slash"></i></button>
-    </span>
+  <div class="form-group">
+    <input [type]="inputType" class="form-control" formControlName="password" placeholder="Password">
+  </div>
+
+  <div class="form-group">
+    <input [type]="inputType" class="form-control" formControlName="confirmPassword" placeholder="confirmPassword">
   </div>
 
   <div class="form-group text-center mt-2">
@@ -21,3 +19,15 @@
     <button class="btn btn-primary" type="button" (click)="cancel()">Cancel</button>
   </div>
 </form>
+
+
+
+<!-- <div class="input-group">
+  <input [type]="inputType" class="form-control" formControlName="confirmpassword" placeholder="confirmpassword">
+  <span class="input-group-btn" (click)="togglePassword()">
+    <button *ngIf="isPasswordVisible" id="passwordButtonShow" class="btn btn-secondary" type="button"><i
+        class="fa fa-eye"></i></button>
+    <button *ngIf="!isPasswordVisible" id="passwordButtonHide" class="btn btn-secondary" type="button"><i
+        class="fa fa-eye-slash"></i></button>
+  </span>
+</div> -->
