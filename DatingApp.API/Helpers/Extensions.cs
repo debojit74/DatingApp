@@ -14,7 +14,8 @@ namespace DatingApp.API.Helpers
         }
 
         public static void AddPagination(this HttpResponse response, int currentPage, int itemsPerPage, int totalItems, int totalPages){
-            response.Headers.Add("Pagination", JSONConvert.SerializeObject(paginationHeader));
+             var paginationHeader = new Pagination(currentPage, itemsPerPage, totalItems, totalPages);
+             response.Headers.Add("Pagination", JSONConvert.SerializeObject(paginationHeader));
              response.Headers.Add("Access-Control-Expose-Headers", "Pagination");
         }
 
