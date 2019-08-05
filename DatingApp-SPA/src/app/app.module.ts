@@ -1,7 +1,7 @@
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
+import { BsDropdownModule, TabsModule, PaginationModule } from 'ngx-bootstrap';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -51,6 +51,7 @@ export function tokenGetter() {
       FormsModule,
       ReactiveFormsModule,
       BsDropdownModule.forRoot(),
+      PaginationModule.forRoot(),
       TabsModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       NgxGalleryModule,
