@@ -10,6 +10,7 @@ import { NgxGalleryModule } from 'ngx-gallery';
 import { FileUploadModule } from 'ng2-file-upload';
 import { BsDatepickerModule } from 'ngx-bootstrap';
 import { TimeAgoPipe } from 'time-ago-pipe';
+import { ButtonsModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -56,6 +57,7 @@ export function tokenGetter() {
       RouterModule.forRoot(appRoutes),
       NgxGalleryModule,
       FileUploadModule,
+      ButtonsModule.forRoot(),
       BsDatepickerModule.forRoot(),
       JwtModule.forRoot({
          config: {

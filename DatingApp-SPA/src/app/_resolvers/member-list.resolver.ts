@@ -12,7 +12,7 @@ import { PaginatedResult } from '../_models/pagination';
 })
 export class MemberListResolver implements Resolve<PaginatedResult<User[]>> {
     pageNumber = 1;
-    pageSize = 5;
+    pageSize = 6;
 
     constructor(
         private userService: UserService,

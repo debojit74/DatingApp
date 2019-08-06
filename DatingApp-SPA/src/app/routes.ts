@@ -3,7 +3,6 @@ import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberListResolver } from './_resolvers/member-list.resolver';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
-import { UserService } from './_services/user.service';
 import { AuthGuard } from './_guards/auth.guard';
 import { MessagesComponent } from './messages/messages.component';
 import { MemberListComponent } from './members/member-list/member-list.component';
