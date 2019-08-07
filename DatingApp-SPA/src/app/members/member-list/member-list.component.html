@@ -1,5 +1,5 @@
 <div class="alert alert-info">
-  <strong class="text-center mt-3">Your matches - {{ pagination.totalItems }} found</strong>
+  <strong>Your matches - {{ pagination.totalItems }} found</strong>
 </div>
 
 <div class="container mt-3">
@@ -45,6 +45,7 @@
   </div>
 </div>
 
+<br />
 <div class="d-flex justify-content-center">
   <pagination [boundaryLinks]="true" [totalItems]="pagination.totalItems" [itemsPerPage]="pagination.itemsPerPage"
     [(ngModel)]="pagination.currentPage" (pageChanged)="pageChanged($event)" previousText="&lsaquo;" nextText="&rsaquo;"
