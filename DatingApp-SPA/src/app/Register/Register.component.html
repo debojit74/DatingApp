@@ -21,7 +21,7 @@
   <div class="form-group">
     <input [ngClass]="{'is-invalid': f.knownAs.errors && f.knownAs.touched}" class="form-control" placeholder="Known as"
       formControlName="knownAs">
-    <div class="invalid-feedback" *ngIf="f.knownAs.touched && f.knownAs.hasError('required')">Known as is required</div>
+    <div class="invalid-feedback" *ngIf="f.knownAs.touched && f.knownAs.hasError('required')">KnownAs is required</div>
   </div>
 
   <div class="form-group">
@@ -76,15 +76,3 @@
     <button class="btn btn-default" type="button" (click)="cancel()">Cancel</button>
   </div>
 </form>
-
-
-
-<!-- <div class="input-group">
-  <input [type]="inputType" class="form-control" formControlName="confirmpassword" placeholder="confirmpassword">
-  <span class="input-group-btn" (click)="togglePassword()">
-    <button *ngIf="isPasswordVisible" id="passwordButtonShow" class="btn btn-secondary" type="button"><i
-        class="fa fa-eye"></i></button>
-    <button *ngIf="!isPasswordVisible" id="passwordButtonHide" class="btn btn-secondary" type="button"><i
-        class="fa fa-eye-slash"></i></button>
-  </span>
-</div> -->
