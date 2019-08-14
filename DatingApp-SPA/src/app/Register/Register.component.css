@@ -1,3 +1,17 @@
-#passwordButtonShow, #passwordButtonHide {
-    border : 1px solid #ced4da;
+.signup{
+    border: 1px transparent;
+    padding: 10px;
+    box-shadow: 5px 10px 18px #888888;
+    width: 400px;
 }
+
+.invalid-feedback{
+    background-color: rgb(192, 49, 80);
+    color: white;
+    border-color: rgb(192, 49, 80);
+    border-radius: 25px;
+    padding-left: 10px; 
+    width: 160px;
+    height: 20px;  
+}
+

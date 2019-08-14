@@ -1,9 +1,10 @@
 import { SubjectService } from './../_services/subject.service';
 import { AlertifyService } from '../_services/alertify.service';
 import { AuthService } from '../_services/auth.service';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-nav',
@@ -13,6 +14,7 @@ import { Subject } from 'rxjs';
 export class NavComponent implements OnInit {
   model: any = {};
   photoUrl: string;
+  @ViewChild('loginForm') loginForm : NgForm;
 
   constructor(public authService: AuthService,
     private subjectService: SubjectService,
@@ -34,6 +36,7 @@ export class NavComponent implements OnInit {
       this.subjectService.loadingStatus(false);
       this.alertify.error(error);
     }, () => {
+      this.loginForm.reset();
       this.router.navigate(['/members']);
     });
   }
