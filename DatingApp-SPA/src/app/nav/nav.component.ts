@@ -14,7 +14,7 @@ import { NgForm } from '@angular/forms';
 export class NavComponent implements OnInit {
   model: any = {};
   photoUrl: string;
-  @ViewChild('loginForm') loginForm : NgForm;
+  @ViewChild('loginForm', { static: false }) loginForm : NgForm;
 
   constructor(public authService: AuthService,
     private subjectService: SubjectService,

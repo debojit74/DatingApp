@@ -13,7 +13,7 @@ import { JwtHelperService } from "@auth0/angular-jwt";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  @ViewChild("alertContainer", { read: ViewContainerRef }) container;
+  @ViewChild("alertContainer", { read: ViewContainerRef, static: false }) container;
   componentRef: ComponentRef<any>;
 
   jwtHelper = new JwtHelperService();
