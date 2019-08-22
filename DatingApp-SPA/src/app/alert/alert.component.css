@@ -1,0 +1,23 @@
+.cancel {
+    display:block;
+    position:absolute;
+    top:3px;
+    right:2px;
+    color:black;
+    height:30px;
+    width:35px;
+    font-size:30px;
+    text-decoration:none;
+    text-align:center;
+    font-weight:bold;
+}
+
+#block {
+    background: white;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}

@@ -1,3 +1,4 @@
+import { AlertComponent } from './alert/alert.component';
 import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -46,7 +47,8 @@ export function tokenGetter() {
       MemberEditComponent,
       PhotoEditorComponent,
       TimeAgoPipe,
-      MemberMessagesComponent
+      MemberMessagesComponent,
+      AlertComponent
    ],
    imports: [
       BrowserModule,
@@ -72,6 +74,7 @@ export function tokenGetter() {
    providers: [
       ErrorInterceptorProvide
    ],
+   entryComponents: [ AlertComponent ],
    bootstrap: [
       AppComponent
    ]

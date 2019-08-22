@@ -1,5 +1,7 @@
 <app-nav></app-nav>
+
 <div class="container mt-4">
     <br>
-    <router-outlet></router-outlet>
+    <router-outlet *ngIf="userActive"></router-outlet>
+    <template #alertContainer></template>
 </div>

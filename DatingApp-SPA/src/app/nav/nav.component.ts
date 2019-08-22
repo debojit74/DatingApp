@@ -1,7 +1,7 @@
 import { SubjectService } from './../_services/subject.service';
 import { AlertifyService } from '../_services/alertify.service';
 import { AuthService } from '../_services/auth.service';
-import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { NgForm } from '@angular/forms';
@@ -28,11 +28,13 @@ export class NavComponent implements OnInit {
   }
 
   login() {
+    this.loginForm.form.disable();
     this.subjectService.loadingStatus(true);
     this.authService.login(this.model).subscribe(next => {
       this.alertify.success("Logged in successfully");
       this.subjectService.loadingStatus(false);
     }, error => {
+      this.loginForm.form.enable();
       this.subjectService.loadingStatus(false);
       this.alertify.error(error);
     }, () => {
